@@ -6,8 +6,19 @@
 typedef struct{
     int size;
     double values[MAX_SIZE][MAX_SIZE];
+    int empty_indices[MAX_SIZE][MAX_SIZE]; // Holds the empty/non-empty states of all indices in the Matrix (have to call initializeMatrix to initialize this)
 } Matrix;
 
+void initializeMatrix(Matrix matrix); // Called after creating a Matrix and setting its size
+
 void printMatrix(Matrix matrix);
+
+void initializeMatrix(Matrix matrix){
+    for(int i = 0; i < matrix.size; i++){
+        for(int j = 0; j < matrix.size; j++){
+            matrix.empty_indices[i][j] = 0;
+        }
+    }
+}
 
 #endif
