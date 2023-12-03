@@ -6,11 +6,11 @@ double getDeterminant(Matrix matrix){
     int row_index = 0, column_index = 0;
 
     switch(getSize(matrix)){
-        case 2:
+        case 2: // Determinant of a 2x2 matrix = ad - bc
             determinant = (getValue(matrix, 0, 0) * getValue(matrix, 1, 1)) - (getValue(matrix, 0, 1) * getValue(matrix, 1, 0));
             break;
 
-        case 3:
+        case 3: // Recursively calls getDeterminant on 2x2 matrices
             setSize(&temp_matrix, 2);
             initializeMatrix(&temp_matrix);
 
@@ -40,7 +40,7 @@ double getDeterminant(Matrix matrix){
             }
             break;
 
-        case 4:
+        case 4: // Recursively calls getDeterminant on 3x3 matrices
             setSize(&temp_matrix, 3);
             initializeMatrix(&temp_matrix);
 
@@ -70,7 +70,7 @@ double getDeterminant(Matrix matrix){
             }
             break;
 
-        default:
+        default: // Not a 2x2, 3x3, or 4x4 matrix
             determinant = -1;
     }
     return determinant;
