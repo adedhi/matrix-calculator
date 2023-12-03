@@ -3,35 +3,62 @@
 #include "matrix.h"
 
 int main(void){
+    int counter = 0;
+
     Matrix temp_matrix;
-    temp_matrix.size = 2;
-    initializeMatrix(temp_matrix);
+    setSize(&temp_matrix, 2);
+    initializeMatrix(&temp_matrix);
 
-    for(int i = 0; i < temp_matrix.size; i++){
-        for(int j = 0; j < temp_matrix.size; j++){
-            temp_matrix.values[i][j] = (i + j);
-            temp_matrix.empty_indices[i][j] = 1;
+    counter = 0;
+    for(int i = 0; i < getSize(temp_matrix); i++){
+        for(int j = 0; j < getSize(temp_matrix); j++){
+            setValue(&temp_matrix, i, j, counter);
+            counter++;
         }
     }
 
-    temp_matrix.values[0][0] = 1000.00;
-    temp_matrix.values[1][1] = 200.00;
+    Matrix temp_matrix2;
+    setSize(&temp_matrix2, 3);
+    initializeMatrix(&temp_matrix2);
 
-    Matrix temp_matrix_2;
-    temp_matrix_2.size = 3;
-    initializeMatrix(temp_matrix_2);
-
-    for(int i = 0; i < temp_matrix_2.size; i++){
-        for(int j = 0; j < temp_matrix_2.size; j++){
-            if(i == j){
-                continue;
-            }
-            temp_matrix_2.values[i][j] = (i + j);
-            temp_matrix_2.empty_indices[i][j] = 1;
+    counter = 0;
+    for(int i = 0; i < getSize(temp_matrix2); i++){
+        for(int j = 0; j < getSize(temp_matrix2); j++){
+            setValue(&temp_matrix2, i, j, counter);
+            counter++;
         }
     }
+
+    Matrix temp_matrix3;
+    setSize(&temp_matrix3, 4);
+    initializeMatrix(&temp_matrix3);
+
+    counter = 0;
+    for(int i = 0; i < getSize(temp_matrix3); i++){
+        for(int j = 0; j < getSize(temp_matrix3); j++){
+            setValue(&temp_matrix3, i, j, counter);
+            counter++;
+        }
+    }
+
+    Matrix temp_matrix4;
+    setSize(&temp_matrix4, 2);
+    initializeMatrix(&temp_matrix4);
+
+    setValue(&temp_matrix4, 0, 0, 5);
+    setValue(&temp_matrix4, 0, 1, 232);
+    setValue(&temp_matrix4, 1, 0, 4);
+    setValue(&temp_matrix4, 1, 1, 0.5);
 
     printMatrix(temp_matrix);
-    printMatrix(temp_matrix_2);
+    printMatrix(temp_matrix2);
+    printMatrix(temp_matrix3);
+    printMatrix(temp_matrix4);
+
+    printf("\n%.2lf\n", getDeterminant(temp_matrix));
+    printf("\n%.2lf\n", getDeterminant(temp_matrix2));
+    printf("\n%.2lf\n", getDeterminant(temp_matrix3));
+    printf("\n%.2lf\n", getDeterminant(temp_matrix4));
+
     return 0;
 }

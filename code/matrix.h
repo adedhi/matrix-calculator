@@ -9,8 +9,20 @@ typedef struct{
     int empty_indices[MAX_SIZE][MAX_SIZE]; // Holds the empty/non-empty states of all indices in the Matrix (have to call initializeMatrix to initialize this)
 } Matrix;
 
-void initializeMatrix(Matrix matrix); // Called after creating a Matrix and setting its size
+void initializeMatrix(Matrix *matrix); // Called after creating a Matrix and setting its size
+
+int setSize(Matrix *matrix, int size);
+
+int setValue(Matrix *matrix, int i, int j, double value);
+
+int getSize(Matrix matrix);
+
+double getValue(Matrix matrix, int i, int j);
+
+int isEmpty(Matrix matrix, int i, int j);
 
 void printMatrix(Matrix matrix);
+
+double getDeterminant(Matrix matrix);
 
 #endif
