@@ -7,7 +7,7 @@ void printMatrix(Matrix matrix){
             if(matrix.empty_indices[i][j] == 1){
                 printf("%6.2f\t", matrix.values[i][j]);
             } else{
-                printf("   -   \t");
+                printf("   -  \t");
             }
         }
         printf("\n");

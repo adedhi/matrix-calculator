@@ -14,6 +14,9 @@ int main(void){
         }
     }
 
+    temp_matrix.values[0][0] = 1000.00;
+    temp_matrix.values[1][1] = 200.00;
+
     Matrix temp_matrix_2;
     temp_matrix_2.size = 3;
     initializeMatrix(temp_matrix_2);
@@ -27,8 +30,6 @@ int main(void){
             temp_matrix_2.empty_indices[i][j] = 1;
         }
     }
-
-    temp_matrix.values[0][0] = 10.00;
 
     printMatrix(temp_matrix);
     printMatrix(temp_matrix_2);
