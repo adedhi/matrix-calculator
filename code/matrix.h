@@ -25,4 +25,10 @@ void printMatrix(Matrix matrix);
 
 double getDeterminant(Matrix matrix);
 
+Matrix copyMatrix(Matrix originalMatrix, Matrix *newMatrix);
+
+Matrix getREF(Matrix matrix);
+
+Matrix getRREF(Matrix matrix);
+
 #endif

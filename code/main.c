@@ -50,15 +50,43 @@ int main(void){
     setValue(&temp_matrix4, 1, 0, 4);
     setValue(&temp_matrix4, 1, 1, 0.5);
 
+    Matrix temp_matrix5;
+    setSize(&temp_matrix5, 3);
+    initializeMatrix(&temp_matrix5);
+
+    setValue(&temp_matrix5, 0, 0, 0);
+    setValue(&temp_matrix5, 0, 1, 6);
+    setValue(&temp_matrix5, 0, 2, -3);
+    setValue(&temp_matrix5, 1, 0, 2);
+    setValue(&temp_matrix5, 1, 1, -2);
+    setValue(&temp_matrix5, 1, 2, 6);
+    setValue(&temp_matrix5, 2, 0, 2);
+    setValue(&temp_matrix5, 2, 1, 0);
+    setValue(&temp_matrix5, 2, 2, 1);
+
     printMatrix(temp_matrix);
     printMatrix(temp_matrix2);
     printMatrix(temp_matrix3);
     printMatrix(temp_matrix4);
+    printMatrix(temp_matrix5);
 
     printf("\n%.2lf\n", getDeterminant(temp_matrix));
     printf("\n%.2lf\n", getDeterminant(temp_matrix2));
     printf("\n%.2lf\n", getDeterminant(temp_matrix3));
     printf("\n%.2lf\n", getDeterminant(temp_matrix4));
+    printf("\n%.2lf\n", getDeterminant(temp_matrix5));
+
+    printf("\n");
+
+    getREF(temp_matrix4);
+    getREF(temp_matrix);
+    getREF(temp_matrix5);
+
+    printf("\n");
+    
+    getRREF(temp_matrix5);
+    // getREF(temp_matrix2);
+    // getREF(temp_matrix3);
 
     return 0;
 }
