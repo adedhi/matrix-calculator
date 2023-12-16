@@ -6,10 +6,11 @@
 typedef struct{
     int size;
     double values[MAX_SIZE][MAX_SIZE];
-    int empty_indices[MAX_SIZE][MAX_SIZE]; // Holds the empty/non-empty states of all indices in the Matrix (have to call initializeMatrix to initialize this)
 } Matrix;
 
-void initializeMatrix(Matrix *matrix); // Called after creating a Matrix and setting its size
+void getMatrix(Matrix *matrix);
+
+void initializeMatrix(Matrix *matrix, int size); // Called after creating a Matrix and setting its size
 
 int setSize(Matrix *matrix, int size);
 
@@ -19,9 +20,9 @@ int getSize(Matrix matrix);
 
 double getValue(Matrix matrix, int i, int j);
 
-int isEmpty(Matrix matrix, int i, int j);
-
 void printMatrix(Matrix matrix);
+
+void printInverseMatrix(Matrix A, Matrix I);
 
 double getDeterminant(Matrix matrix);
 
@@ -30,5 +31,7 @@ Matrix copyMatrix(Matrix originalMatrix, Matrix *newMatrix);
 Matrix getREF(Matrix matrix);
 
 Matrix getRREF(Matrix matrix);
+
+Matrix getInverse(Matrix matrix);
 
 #endif

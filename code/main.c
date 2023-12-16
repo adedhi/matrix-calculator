@@ -6,8 +6,7 @@ int main(void){
     int counter = 0;
 
     Matrix temp_matrix;
-    setSize(&temp_matrix, 2);
-    initializeMatrix(&temp_matrix);
+    initializeMatrix(&temp_matrix, 2);
 
     counter = 0;
     for(int i = 0; i < getSize(temp_matrix); i++){
@@ -18,8 +17,7 @@ int main(void){
     }
 
     Matrix temp_matrix2;
-    setSize(&temp_matrix2, 3);
-    initializeMatrix(&temp_matrix2);
+    initializeMatrix(&temp_matrix2, 3);
 
     counter = 0;
     for(int i = 0; i < getSize(temp_matrix2); i++){
@@ -30,8 +28,7 @@ int main(void){
     }
 
     Matrix temp_matrix3;
-    setSize(&temp_matrix3, 4);
-    initializeMatrix(&temp_matrix3);
+    initializeMatrix(&temp_matrix3, 4);
 
     counter = 0;
     for(int i = 0; i < getSize(temp_matrix3); i++){
@@ -42,8 +39,7 @@ int main(void){
     }
 
     Matrix temp_matrix4;
-    setSize(&temp_matrix4, 2);
-    initializeMatrix(&temp_matrix4);
+    initializeMatrix(&temp_matrix4, 2);
 
     setValue(&temp_matrix4, 0, 0, 5);
     setValue(&temp_matrix4, 0, 1, 232);
@@ -51,8 +47,7 @@ int main(void){
     setValue(&temp_matrix4, 1, 1, 0.5);
 
     Matrix temp_matrix5;
-    setSize(&temp_matrix5, 3);
-    initializeMatrix(&temp_matrix5);
+    initializeMatrix(&temp_matrix5, 3);
 
     setValue(&temp_matrix5, 0, 0, 0);
     setValue(&temp_matrix5, 0, 1, 6);
@@ -87,6 +82,10 @@ int main(void){
     getRREF(temp_matrix5);
     // getREF(temp_matrix2);
     // getREF(temp_matrix3);
+
+    printf("\n");
+
+    getInverse(temp_matrix5);
 
     return 0;
 }

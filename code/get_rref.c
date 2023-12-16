@@ -22,7 +22,7 @@ Matrix getRREF(Matrix matrix){
     printMatrix(temp);
 
     double leading_value;
-    for(int i = matrix_size - 1; i >= 0; i--){
+    for(int i = matrix_size - 1; i >= 1; i--){
         for(int j = 0; j < matrix_size; j++){
             leading_value = getValue(temp, i, j);
             if(leading_value != 0){

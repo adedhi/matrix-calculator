@@ -13,8 +13,7 @@ Matrix getREF(Matrix matrix){
     double leading_value;
     double curr_value;
     double factor;
-
-    for(int i = 0; i < matrix_size; i++){
+    for(int i = 0; i < matrix_size - 1; i++){
         all_zero = 1; // 0 if all entries in the current column are zero, 1 otherwise
         if(getValue(temp, i, i) == 0){
             all_zero = 0;
@@ -28,7 +27,6 @@ Matrix getREF(Matrix matrix){
                 }
             }
         }
-
         if(all_zero == 0){ // All entries in the current column are already zero
             continue;
         }

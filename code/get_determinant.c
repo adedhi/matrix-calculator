@@ -11,8 +11,7 @@ double getDeterminant(Matrix matrix){
             break;
 
         case 3: // Recursively calls getDeterminant on 2x2 matrices
-            setSize(&temp_matrix, 2);
-            initializeMatrix(&temp_matrix);
+            initializeMatrix(&temp_matrix, 2);
 
             for(int n = 0; n < 3; n++){
                 row_index = 0, column_index = 0;
@@ -41,8 +40,7 @@ double getDeterminant(Matrix matrix){
             break;
 
         case 4: // Recursively calls getDeterminant on 3x3 matrices
-            setSize(&temp_matrix, 3);
-            initializeMatrix(&temp_matrix);
+            initializeMatrix(&temp_matrix, 3);
 
             for(int n = 0; n < 4; n++){
                 row_index = 0, column_index = 0;
