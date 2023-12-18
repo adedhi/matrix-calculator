@@ -22,6 +22,8 @@ double getValue(Matrix matrix, int i, int j);
 
 void printMatrix(Matrix matrix);
 
+void printInputMatrix(Matrix matrix, int next_position);
+
 void printInverseMatrix(Matrix A, Matrix I);
 
 double getDeterminant(Matrix matrix);

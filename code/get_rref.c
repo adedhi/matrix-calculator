@@ -11,7 +11,7 @@ Matrix getRREF(Matrix matrix){
     for(int i = 0; i < matrix_size; i++){
         for(int j = 0; j < matrix_size; j++){
             curr_value = getValue(temp, i, j);
-            if((0.005 < curr_value) || (curr_value < -0.005)){
+            if((curr_value <= -0.005) || (0.005 <= curr_value)){
                 factor = (1 / curr_value);
                 rowMultiply(&temp, i, factor);
                 printf("R%d(%.2lf)\n", i, factor);

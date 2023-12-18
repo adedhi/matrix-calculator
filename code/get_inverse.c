@@ -4,7 +4,7 @@
 
 Matrix getInverse(Matrix matrix){
     if(getDeterminant(matrix) == 0){ // (|A| = 0) => (A is not invertible)
-        printf("This matrix is not invertible.\n");
+        printf("This matrix is not invertible because its determinant is 0.\n");
         return(matrix);
     }
 
