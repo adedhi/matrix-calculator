@@ -7,8 +7,8 @@ int main(void){
     int user_input = -1;
     int play_flag = 1;
 
-    printf("Welcome, this is a matrix calculator that can calculate the determinant, row echelon form, reduced row echelon form, and inverse of square matrices of dimension 2, 3, or 4.\n\n");
-    printf("First, please input the size and values of your matrix:\n");
+    printf("Welcome, this is a matrix calculator.\nIt accepts square matrices of dimensions 2x2, 3x3, or 4x4.\nIt can calculate the matrix's determinant, row echelon form, reduced row echelon form, and inverse.\n\n");
+    printf("Please input the size and values of your matrix:\n\n");
     getMatrix(&user_matrix);
 
     while(play_flag == 1){
@@ -34,15 +34,15 @@ int main(void){
                 printf("\nDeterminant of the matrix: %.2lf\n", getDeterminant(user_matrix));
                 break;
             case 4:
-                printf("\nRow Echelon Form of the matrix:\n");
+                printf("\nREF =>\n");
                 getREF(user_matrix);
                 break;
             case 5:
-                printf("\nReduced Row Echelon Form of the matrix:\n");
+                printf("\nRREF =>\n");
                 getRREF(user_matrix);
                 break;
             case 6:
-                printf("\nInverse of the matrix:\n");
+                printf("\nInverse =>\n");
                 getInverse(user_matrix);
                 break;
             case 7:

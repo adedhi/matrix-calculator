@@ -1,7 +1,7 @@
 #include "matrix.h"
 
 int setSize(Matrix *matrix, int size){ // Requires a pointer to the matrix
-    if((size == 2) || (size == 3) || (size == 4)){
+    if((size == 2) || (size == 3) || (size == 4)){ // Valid sizes
         matrix->size = size;
         return(1);
     } else{
@@ -10,7 +10,8 @@ int setSize(Matrix *matrix, int size){ // Requires a pointer to the matrix
 }
 
 int setValue(Matrix *matrix, int i, int j, double value){ // Requires a pointer to the matrix
-    if(((0 <= i) && (i < getSize(*matrix))) && ((0 <= j) && (j < getSize(*matrix)))){
+    int matrix_size = getSize(*matrix);
+    if(((0 <= i) && (i < matrix_size)) && ((0 <= j) && (j < matrix_size))){ // Valid position
         matrix->values[i][j] = value;
         return(1);
     } else{
@@ -23,7 +24,8 @@ int getSize(Matrix matrix){
 }
 
 double getValue(Matrix matrix, int i, int j){
-    if(((0 <= i) && (i < getSize(matrix))) && ((0 <= j) && (j < getSize(matrix)))){
+    int matrix_size = getSize(matrix);
+    if(((0 <= i) && (i < matrix_size)) && ((0 <= j) && (j < matrix_size))){ // Valid position
         return(matrix.values[i][j]);
     }
 }

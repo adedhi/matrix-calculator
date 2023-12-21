@@ -5,12 +5,14 @@
 
 typedef struct{
     int size;
-    double values[MAX_SIZE][MAX_SIZE];
+    double values[MAX_SIZE][MAX_SIZE]; // Values are doubles (rounded to 2 decimal places when printed)
 } Matrix;
 
-void getMatrix(Matrix *matrix);
+void getMatrix(Matrix *matrix); // Gets the user's input and initializes a matrix
 
-void initializeMatrix(Matrix *matrix, int size); // Called after creating a Matrix and setting its size
+void initializeMatrix(Matrix *matrix, int size); // Called after declaring a Matrix
+
+Matrix copyMatrix(Matrix originalMatrix, Matrix *newMatrix); // Copies an old matrix into a new one
 
 int setSize(Matrix *matrix, int size);
 
@@ -20,20 +22,18 @@ int getSize(Matrix matrix);
 
 double getValue(Matrix matrix, int i, int j);
 
-void printMatrix(Matrix matrix);
+void printMatrix(Matrix matrix); // Prints a matrix
 
-void printInputMatrix(Matrix matrix, int next_position);
+void printInputMatrix(Matrix matrix, int next_position); // Prints an input matrix (for use in getMatrix)
 
-void printInverseMatrix(Matrix A, Matrix I);
+void printInverseMatrix(Matrix A, Matrix I); // Prints a matrix in the form (A|I) (for use in getInverse)
 
-double getDeterminant(Matrix matrix);
+double getDeterminant(Matrix matrix); // Calculates and returns the Determinant of a matrix
 
-Matrix copyMatrix(Matrix originalMatrix, Matrix *newMatrix);
+Matrix getREF(Matrix matrix); // Calculates and returns the Row Echelon Form of a matrix
 
-Matrix getREF(Matrix matrix);
+Matrix getRREF(Matrix matrix); // Calculates and returns the Reduced Row Echelon Form of a matrix
 
-Matrix getRREF(Matrix matrix);
-
-Matrix getInverse(Matrix matrix);
+Matrix getInverse(Matrix matrix); // Calculates and returns the Inverse of a matrix
 
 #endif
